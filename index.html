@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Mely & Ivan - Boda</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- FUENTES ELEGANTES -->
+  <link href="https://fonts.googleapis.com/css2?family=Lora&family=Playfair+Display:wght@500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+
+
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Lora', serif;
+      scroll-behavior: smooth;
+      color: #333;
+    }
+/*
+    header {
+      height: 100vh;
+      background: url('Foto1.jpg') no-repeat center center;
+      background-size: cover;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      text-align: center;
+      color: black;
+      padding: 20px;
+      background-color: rgba(255, 255, 255, 0.6);
+    }*/
+/*
+    header {
+      height: 100vh;
+      background: url('Foto1.jpg') no-repeat center center fixed; 
+      background-size: cover;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center; // Centra el contenido horizontalmente
+      text-align: center;
+      color: black;
+      padding: 20px;
+      position: relative;
+      z-index: 1;
+    }
+*/
+      
+header {
+  height: 100vh;
+  background: url('docs/assets/img/Foto1.jpg') no-repeat center center fixed;
+  background-size: cover;
+  position: relative; /* Necesario para que el overlay se posicione dentro */
+  overflow: hidden;
+}
+
+      
+      /*
+.header-overlay {
+  background-color: rgba(255, 255, 255, 0.6);
+  padding: 20px 40px;
+  border-radius: 12px;
+}
+*/
+      
+      /*
+.header-overlay {
+  height: 100vh;
+  background-color: rgba(243, 240, 232, 0.5); 80% opacidad #f3f0e8
+  padding: 40px 20px;
+  width: 100%;
+  text-align: center;
+}
+*/
+      
+.header-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.4); /* Fondo translúcido */
+  
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+}
+
+
+    header h1 {
+      font-family: 'Dancing Script', cursive;
+      font-size: 6em;
+      color: #5f442e;
+    }
+      
+      
+
+    header p {
+      font-size: 1.2em;
+    }
+
+    section {
+      padding: 80px 20px;
+      text-align: center;
+    }
+
+    h2 {
+      font-family: 'Dancing Script', cursive;
+      font-size: 3.5em;
+      margin-bottom: 20px;
+        color: #5f442e;
+    }
+      
+    h3 {
+      /*font-family: 'Dancing Script', cursive;*/
+      font-size: 2em;
+        color: #5f442e;
+    }
+      
+    h5 {
+      font-family: 'Dancing Script', cursive;
+      font-size: 1.5em;
+        color: #5f442e;
+    }
+      
+    header h4 {
+      font-family: 'Dancing Script', cursive;
+      font-size: 6em;
+        color: #5f442e;
+    }
+      
+    p1 {
+      ffont-size: 1.2em;
+        color: #5f442e;
+    }
+
+    .info-box {
+      font-size: 1.3em;
+      background: rgba(255, 255, 255, 0.9);
+      display: inline-block;
+      padding: 25px;
+      border: 0px solid #ddd;
+      border-radius: 0px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+      max-width: 800px;
+      margin: auto;
+    }
+
+/* TODO: For Test
+    .map-link, .button {
+      display: inline-block;
+      margin-top: 15px;
+      padding: 10px 20px;
+      background: #b78f63;
+      color: white;
+      border-radius: 5px;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+
+    .map-link:hover, .button:hover {
+      background: #a37c50;
+    }
+*/
+      
+    .map-link, .button {
+      display: inline-block;
+      margin-top: 15px;
+      padding: 12px 30px;
+      background: transparent;
+      border: 2px solid #b78f63;
+      color: #b78f63;
+      font-family: 'Lora', serif;
+      font-size: 1em;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      text-decoration: none;
+      border-radius: 0;
+      transition: all 0.3s ease;
+    }
+
+    .map-link:hover, .button:hover {
+      background: #b78f63;
+      color: white;
+    }
+
+/* TODO: For Test
+    .section-ceremony { background-color: #fce8e6; }
+    .section-reception { background-color: #f3f0e8; }
+    .section-dresscode { background: url('Foto6.jpg') no-repeat center center;background-size: cover;background-color: #e6f5f1; }
+    .section-gifts { background-color: #f7edf9; }
+    .section-hotels { background-color: #f2f7fb; }
+    .section-hotels2 { background-color: #f2f7fb; }
+    .section-confirm { background-color: #fdeee3; }
+*/
+      
+      /*
+    .section-ceremony    { background-color: #f7f4ef; }
+      */
+    .section-ceremony {
+      background-color: #f7f4ef;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+
+      
+    .section-reception   { background-color: #f4e9e0; }
+    .section-dresscode   {       background: url('docs/assets/img/Foto5.jpg') no-repeat center center;background-size: cover;background-color: #e4ebe4; }
+    .section-ninos     { background-color: #f4e9e0; }
+    .section-gifts       { background-color: #f7f4ef; }
+    .section-hotels      { background-color: #eae6da; }
+    .section-hotels2      { background-color: #eae6da; }
+    .section-confirm     { background-color: #f4e9e0; }
+
+    .fullscreen {
+      height: 100vh;
+      background-size: cover;
+      background-position: center;
+    }
+      
+      
+.confirm-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  justify-content: center;
+}
+
+.confirm-img {
+  width: 100%;
+  max-width: 800px;
+  object-fit: cover;
+  height: 100%;
+}
+
+.confirm-wrapper .info-box {
+  margin: 0;
+  border-left: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 400px;
+  flex: 1;
+}
+
+
+    footer {
+      background: #f0f0f0;
+      text-align: center;
+      padding: 40px 20px;
+      font-size: 0.9em;
+      font-family: 'Lora', serif;
+    }
+      
+/*
+    .countdown_container {
+        justify-content: center;
+      text-align: center;
+      background: rgba(255,255,255,0.8);
+      padding: 40px;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+      max-width: 400px;
+      width: 90%;
+    }
+*/
+    .countdown_container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      background: rgba(255,255,255,0.8);
+      padding: 40px;
+      border-radius: 2px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+      max-width: 400px;
+      margin-bottom: 40px;
+      width: 90%;
+      
+    }
+
+    .countdown {
+      display: flex;
+      justify-content: space-between;
+    }
+    .card {
+      flex: 1;
+      margin: 0 5px;
+      background: #fff;
+      padding: 15px;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
+    .number {
+      font-family: 'Courier New', monospace;
+      font-size: 2.2rem;
+      color: #222;
+    }
+    .label {
+      font-size: 0.8rem;
+      color: #666;
+      margin-top: 5px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    @media(max-width: 500px) {
+      .countdown {
+        flex-direction: column;
+      }
+      .card {
+        margin: 5px 0;
+      }
+    }
+  </style>
+</head>
+<body>
+
+
+<header>
+  <div class="header-overlay">
+  <h1>Melissa & Iván</h1>
+  <h3>28 de Marzo del 2026</h3>
+  </div>
+</header>
+
+
+<section class="section-ceremony">
+    <h3 style="margin-bottom: 40px;font-size: 3em;font-family: 'Dancing Script', cursive;">28 . 03 . 2026</h3>
+    <div class="countdown_container">
+    <div class="countdown">
+      <div class="card"><div id="days" class="number">--</div><div class="label">DÍAS</div></div>
+      <div class="card"><div id="hours" class="number">--</div><div class="label">HORAS</div></div>
+      <div class="card"><div id="minutes" class="number">--</div><div class="label">MIN</div></div>
+      <div class="card"><div id="seconds" class="number">--</div><div class="label">SEG</div></div>
+    </div>
+  </div>
+
+
+  <div class="info-box">
+    <h5 style="margin-top: 40px;">NUESTROS PADRES</h5>
+    
+    <p style="margin-top: 30px;">Roxanna Iglesias Ramírez</p>
+    <p>Rafael Jesús Lugo Ibarra</p>
+    
+    <p style="margin-top: 30px;">Luz Del Carmen González Gutiérrez</p>
+    <p style="margin-bottom: 40px;">Juan Ramón Rodríguez González †</p>
+  </div>
+</section>
+    
+<script>
+    const target = new Date("2026-03-28T17:30:00");
+    const ids = ["days", "hours", "minutes", "seconds"];
+
+    function update() {
+      const now = new Date();
+      let diff = target - now;
+      if (diff <= 0) {
+        ids.forEach(id => document.getElementById(id).innerText = "00");
+        clearInterval(timer);
+        return;
+      }
+      const d = Math.floor(diff / 86400000);
+      diff %= 86400000;
+      const h = Math.floor(diff / 3600000);
+      diff %= 3600000;
+      const m = Math.floor(diff / 60000);
+      const s = Math.floor(diff / 1000) % 60;
+
+      document.getElementById("days").innerText = String(d).padStart(2, '0');
+      document.getElementById("hours").innerText = String(h).padStart(2, '0');
+      document.getElementById("minutes").innerText = String(m).padStart(2, '0');
+      document.getElementById("seconds").innerText = String(s).padStart(2, '0');
+    }
+
+    update();
+    const timer = setInterval(update, 1000);
+</script>
+
+<section class="fullscreen" style="background-image:url('docs/assets/img/Foto2.jpg');"></section>
+
+<section class="section-reception">
+  <h2>Ceremonia y Recepción</h2>
+  <div class="info-box">
+    <p style="margin-bottom: 20px;font-size: 1.6em;">Hacienda de la Santa Cruz</p>
+    <p style="margin-bottom: 20px;font-size: 1.2em;">5:30 pm</p>
+    <img src="docs/assets/img/hacienda.jpg" alt="Hacienda" width="200">
+    <p style="margin-top: 10px;">Carretera a Colotlán Km 5.5</p>
+    <p style="margin-bottom: 10px">Zapopan</p>
+    <a href="https://maps.app.goo.gl/3vrv135P1NR2qjux9" class="map-link" target="_blank" rel="noopener noreferrer">Ver</a>
+  </div>
+</section>
+    
+<section class="section-dresscode">
+  <div class="info-box">
+    <h2>Código de Vestimenta</h2>
+    <p style="margin-bottom: 10px;color: #5f442e;font-size: 2em;">Formal</p>
+    <img src="docs/assets/img/dress_code.png" alt="Dress Code" width="300">
+  </div>
+</section>
+
+<section class="section-ninos">
+  <div class="info-box">
+    <h3>No Niños</h2>
+    <p style="margin-top: 40px;margin-bottom: 20px;">Aunque adoramos a los más pequeños de la familia, por motivos de seguridad la hacienda solo permite que este evento sea exclusivo para mayores de edad.</p>
+<p style="margin-top: 40px;margin-bottom: 20px;">Agradecemos de corazón tu comprensión y apoyo para que todos podamos disfrutar de una celebración tranquila y especial.</p>
+  </div>
+</section>
+    
+<section class="fullscreen" style="background-image:url('docs/assets/img/Foto3.jpg');height: 250vh;"></section>
+
+
+<section class="section-gifts">
+  <h2>Regalos</h2>
+  <div class="info-box">
+    <p style="margin-bottom: 10px;">El mejor regalo es tu presencia.</p>
+    <p style="margin-bottom: 40px;">Pero si deseas contribuir a nuestro nuevo comienzo en el extranjero, puedes hacerlo en nuestra cuenta </p>
+    <p>BBVA</p>
+    <p>Nombre: Melissa Lugo Iglesias</p>
+    <p>No. Cuenta: 159 903 8984</p>
+    <p>CLABE: 012 180 01599038984 4</p>
+    <p>Referencia: Nombre del invitado</p>
+  </div>
+</section>
+
+<section class="fullscreen" style="background-image:url('docs/assets/img/Foto4.jpg');height: 250vh;"></section>
+
+<section class="section-hotels">
+  <h2>Hospedaje</h2>
+  <div class="info-box">
+    <p style="margin-bottom: 20px;font-size: 1.6em;">Hyatt Regency Andares Guadalajara</p>
+    <img src="docs/assets/img/hyatt.jpg" alt="Hyatt" width="300">
+    <p style="margin-top: 20px;">Blvd. Puerta de Hierro 5065</p>
+    <p style="margin-bottom: 20px">Zapopan</p>
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3731.9438380882298!2d-103.41485402419723!3d20.71250508085894!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8428af03c0bde3c1%3A0xd633bfad277a45c5!2sHyatt%20Regency%20Andares%20Guadalajara!5e0!3m2!1ses!2smx!4v1750620851712!5m2!1ses!2smx" width="350" height="250" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    <p style="margin-top: 10px;color: rgba(255, 255, 255, 0);">-</p>
+    <a href="https://maps.app.goo.gl/E6HeHPBVaaoLEx5L7" class="map-link" target="_blank" rel="noopener noreferrer">Ver</a>
+  </div>
+</section>
+<section class="section-hotels2">
+  <div class="info-box">
+    <p style="margin-bottom: 20px;font-size: 1.6em;">Holiday Inn Express Guadalajara Vallarta</p>
+    <img src="docs/assets/img/holiday.jpg" alt="Hyatt" width="250">
+    <p style="margin-top: 20px;">Carretera Guadalajara-Nogales 440</p>
+    <p style="margin-bottom: 20px">Zapopan</p>
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d17253.844363473858!2d-103.45588316007552!3d20.70657805084084!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8428a9c4571603dd%3A0x6276ca047d4c5791!2sHoliday%20Inn%20Express%20Guadalajara%20Vallarta%20Poniente%20by%20IHG!5e0!3m2!1ses!2smx!4v1750621370906!5m2!1ses!2smx" width="350" height="250" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    <p style="margin-top: 10px;color: rgba(255, 255, 255, 0);">-</p>
+    <a href="https://maps.app.goo.gl/L2mqBLEgK8KR3RGK9" class="map-link" target="_blank" rel="noopener noreferrer">Ver</a>
+  </div>
+</section>
+    
+<section class="section-confirm">
+  <div class="confirm-wrapper">
+    <img src="docs/assets/img/Foto12.jpg" alt="Confirmar" class="confirm-img" />
+  </div>
+</section>
+    
+  
+<section class="section-confirm">
+  <div class="confirm-wrapper">
+    <img src="docs/assets/img/Foto6.jpg" alt="Confirmar" class="confirm-img" />
+    <div class="info-box">
+      <h2>Confirmar Asistencia</h2>
+      <p style="margin-bottom: 40px;margin-top: 20px;">28 de Marzo de 2026</p>
+      <p style="margin-bottom: 40px;margin-top: 20px;">Por favor confirma tu asistencia antes del 1 de Noviembre</p>
+      <a href="#" class="button">Confirmar</a>
+    </div>
+  </div>
+</section>
+
+
+<!-- TODO: For Test  
+<section class="section-confirm">
+  <h2>Confirmar Asistencia</h2>
+  <div class="info-box">
+    <p>Por favor confirma tu asistencia antes del 1 de octubre</p>
+    <a href="#" class="button">Confirmar</a>
+  </div>
+</section>
+-->
+    
+<footer>
+  Gracias por compartir este día tan especial con nosotros ♥<br>
+  Mely & Ivan © 2026
+</footer>
+
+</body>
+</html>
