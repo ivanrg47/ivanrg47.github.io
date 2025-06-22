@@ -219,11 +219,21 @@ header {
     .section-hotels2      { background-color: #eae6da; }
     .section-confirm     { background-color: #f4e9e0; }
 
+      /*
     .fullscreen {
       height: 100vh;
       background-size: cover;
       background-position: center;
-    }
+    }*/
+      
+.fullscreen {
+  width: 100vw; /* ← Asegura que use todo el ancho visible */
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
       
       
 .confirm-wrapper {
