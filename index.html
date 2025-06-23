@@ -300,12 +300,23 @@ header h1 {
       
     }
 
+/*
     .countdown {
       display: flex;
       justify-content: space-between;
       align-items: center;
       text-align: center;
     }
+      */
+      
+    .countdown {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap; /* <-- Esto */
+      gap: 10px;
+    }
+
     .card {
       flex: 1;
       margin: 0 5px;
@@ -343,7 +354,7 @@ header h1 {
       letter-spacing: 0.05em;
     }
 
-
+/*
     @media(max-width: 500px) {
       .countdown {
         flex-direction: column;
@@ -352,6 +363,7 @@ header h1 {
         margin: 5px 0;
       }
     }
+      */
   </style>
 </head>
 <body>
