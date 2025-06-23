@@ -47,13 +47,34 @@
       z-index: 1;
     }
 */
-      
+
+/*
 header {
   height: 100vh;
   background: url('docs/assets/img/Foto1_cuadrada_720.jpg') no-repeat center center fixed;
   background-size: cover;
-  position: relative; /* Necesario para que el overlay se posicione dentro */
+  position: relative; 
   overflow: hidden;
+}
+*/
+      
+header {
+  height: 100vh;
+  background-color: #f7f4ef;
+  background: url('docs/assets/img/Foto1_cuadrada.png') no-repeat center center fixed;
+  background-size: cover;
+  position: relative;
+  overflow: hidden;
+}
+
+@media (max-width: 1080px) {
+  header {
+    background-color: #f7f4ef;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: scroll; /* Mejora rendimiento en móviles */
+  }
 }
 
       
