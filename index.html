@@ -50,8 +50,8 @@
 
 /*
 header {
-  height: 100vh;
-  background: url('docs/assets/img/Foto1_cuadrada_720.jpg') no-repeat center center fixed;
+  height: 60vh;
+  background: url('docs/assets/img/Foto1_cuadrada_HiRes.jpg') no-repeat center center fixed;
   background-size: cover;
   position: relative; 
   overflow: hidden;
@@ -67,13 +67,22 @@ header {
   overflow: hidden;
 }
 
+      /*
 @media (max-width: 1080px) {
   header {
     background-color: #f7f4ef;
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
-    background-attachment: scroll; /* Mejora rendimiento en móviles */
+    background-attachment: scroll; // Mejora rendimiento en móviles 
+  }
+}*/
+      
+@media (max-width: 768px) {
+  header {
+    background-size: cover;
+    background-attachment: scroll;
+    min-height: 60vh;
   }
 }
 
@@ -159,11 +168,6 @@ header h1 {
     h5 {
       font-family: 'Dancing Script', cursive;
       font-size: 1.5em;
-        color: #5f442e;
-    }
-      
-    p1 {
-      ffont-size: 1.2em;
         color: #5f442e;
     }
       
