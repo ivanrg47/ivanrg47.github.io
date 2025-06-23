@@ -50,7 +50,7 @@
       
 header {
   height: 100vh;
-  background: url('docs/assets/img/Foto1.jpg') no-repeat center center fixed;
+  background: url('docs/assets/img/Foto1_cuadrada.png') no-repeat center center fixed;
   background-size: cover;
   position: relative; /* Necesario para que el overlay se posicione dentro */
   overflow: hidden;
@@ -91,13 +91,20 @@ header {
   padding: 20px;
 }
 
-
+/*
     header h1 {
       font-family: 'Dancing Script', cursive;
       font-size: 6em;
       color: #5f442e;
     }
+  */
       
+header h1 {
+  font-family: 'Dancing Script', cursive;
+  font-size: clamp(2.5rem, 10vw, 6rem); /* Mínimo 2.5rem, ideal 10vw, máximo 6rem */
+  color: #5f442e;
+}
+
       
 
     header p {
@@ -122,20 +129,27 @@ header {
         color: #5f442e;
     }
       
-    h5 {
-      font-family: 'Dancing Script', cursive;
-      font-size: 1.5em;
-        color: #5f442e;
-    }
-      
     header h4 {
       font-family: 'Dancing Script', cursive;
       font-size: 6em;
         color: #5f442e;
     }
       
+    h5 {
+      font-family: 'Dancing Script', cursive;
+      font-size: 1.5em;
+        color: #5f442e;
+    }
+      
     p1 {
       ffont-size: 1.2em;
+        color: #5f442e;
+    }
+      
+      
+    h6 {
+      /*font-family: 'Dancing Script', cursive;*/
+      font-size: clamp(1rem, 3vw, 2rem); /* Mínimo 2.5rem, ideal 10vw, máximo 6rem */
         color: #5f442e;
     }
 
@@ -219,21 +233,11 @@ header {
     .section-hotels2      { background-color: #eae6da; }
     .section-confirm     { background-color: #f4e9e0; }
 
-      /*
     .fullscreen {
       height: 100vh;
       background-size: cover;
       background-position: center;
-    }*/
-      
-.fullscreen {
-  width: 100vw; /* ← Asegura que use todo el ancho visible */
-  height: 100vh;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-
+    }
       
       
 .confirm-wrapper {
@@ -336,7 +340,7 @@ header {
 <header>
   <div class="header-overlay">
   <h1>Melissa & Iván</h1>
-  <h3>28 de Marzo del 2026</h3>
+  <h6>28 de Marzo del 2026</h6>
   </div>
 </header>
 
@@ -417,7 +421,7 @@ header {
 
 <section class="section-ninos">
   <div class="info-box">
-    <h3>No Niños</h2>
+    <h3>No Niños</h3>
     <p style="margin-top: 40px;margin-bottom: 20px;">Aunque adoramos a los más pequeños de la familia, por motivos de seguridad la hacienda solo permite que este evento sea exclusivo para mayores de edad.</p>
 <p style="margin-top: 40px;margin-bottom: 20px;">Agradecemos de corazón tu comprensión y apoyo para que todos podamos disfrutar de una celebración tranquila y especial.</p>
   </div>
