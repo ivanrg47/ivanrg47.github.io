@@ -109,10 +109,11 @@ h2 {
         
         <input type="email" name="correo" placeholder="Tu correo electrónico" required
                style="margin-bottom: 15px; padding: 12px; width: 100%; font-family: 'Lora', serif; border: 1px solid #ccc;">
-        
+          
+          
         <input type="text" name="nombre" placeholder="Cantidad de asistentes" required
                style="margin-bottom: 15px; padding: 12px; width: 100%; font-family: 'Lora', serif; border: 1px solid #ccc;">
-          
+        
         <select name="asistencia" required
                 style="margin-bottom: 15px; padding: 12px; width: 100%; font-family: 'Lora', serif; border: 1px solid #ccc;">
           <option value="">¿Asistirás?</option>
@@ -140,7 +141,7 @@ h2 {
   document.getElementById('confirmacion-form').addEventListener('submit', function(event) {
     event.preventDefault();
 
-    emailjs.sendForm('service_xoorggc', 'template_c8dk3dd', this)
+    emailjs.sendForm('service_nxvczjm', 'template_pa0usvs', this)
       .then(function() {
         alert('¡Gracias por confirmar tu asistencia! 💌');
         document.getElementById('confirmacion-form').reset();
