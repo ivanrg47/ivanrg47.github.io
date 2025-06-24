@@ -173,11 +173,32 @@ header {
     .section-hotels2      { background-color: #eae6da; }
     .section-confirm     { background-color: #f4e9e0; }
 
-    .fullscreen {
+    .fullscreen2 {
       height: 100vh;
       background-size: cover;
       background-position: center;
     }
+      
+.fullscreen {
+  background-position: center top;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 150vh; /* valor base, por ejemplo */
+}
+
+/* Para pantallas más pequeñas (celulares, menos de 768px) */
+@media (max-width: 767px) {
+  .fullscreen {
+    height: 70vh; /* más bajo en móviles */
+  }
+}
+
+/* Para pantallas grandes (más de 1400px, por ejemplo) */
+@media (min-width: 1400px) {
+  .fullscreen {
+    height: 350vh; /* más alto en desktop */
+  }
+}
       
   
 /*-- ------------------------------ Counter -------------------------------- -- */
@@ -378,7 +399,7 @@ header {
 <!-- ------------------------------ Padres -------------------------------- -->
 
   <div class="info-box">
-    <h5 style="margin-top: 40px;">NUESTROS PADRES</h5>
+    <h5 style="margin-top: 40px;">Nuestros Padres</h5>
     
     <p style="margin-top: 30px;">Roxana Helena Iglesias Ramírez</p>
     <p>Rafael Jesús Lugo Ibarra</p>
@@ -419,7 +440,7 @@ header {
     
 <!-- ------------------------------ Photo  -------------------------------- -->
 
-<section class="fullscreen" style="background-image:url('docs/assets/img/Foto2.jpg');"></section>
+<section class="fullscreen2" style="background-image:url('docs/assets/img/Foto2.jpg');"></section>
 
     
 <!-- ------------------------------ Ceremony and reception -------------------------------- -->
@@ -458,7 +479,7 @@ header {
     
 <!-- ------------------------------ Photo -------------------------------- -->
     
-<section class="fullscreen" style="background-image:url('docs/assets/img/Foto3.jpg');height: 150vh; background-position: center top;"></section>
+<section class="fullscreen" style="background-image:url('docs/assets/img/Foto3.jpg');"></section>
 
 
 <!-- ------------------------------ Gifts -------------------------------- -->
@@ -478,7 +499,7 @@ header {
 
 <!-- ------------------------------ Photo -------------------------------- -->
     
-<section class="fullscreen" style="background-image:url('docs/assets/img/Foto4.jpg');height: 150vh; background-position: center top;""></section>
+<section class="fullscreen" style="background-image:url('docs/assets/img/Foto4.jpg');"></section>
 
 
 <!-- ------------------------------ Carrousel -------------------------------- -->
