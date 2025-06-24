@@ -18,35 +18,6 @@
       scroll-behavior: smooth;
       color: #333;
     }
-/*
-    header {
-      height: 100vh;
-      background: url('Foto1.jpg') no-repeat center center;
-      background-size: cover;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      text-align: center;
-      color: black;
-      padding: 20px;
-      background-color: rgba(255, 255, 255, 0.6);
-    }*/
-/*
-    header {
-      height: 100vh;
-      background: url('Foto1.jpg') no-repeat center center fixed; 
-      background-size: cover;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center; // Centra el contenido horizontalmente
-      text-align: center;
-      color: black;
-      padding: 20px;
-      position: relative;
-      z-index: 1;
-    }
-*/
 
 /*
 header {
@@ -58,14 +29,14 @@ header {
 }
 */
       
-header {
-  height: clamp(40vh, 60vh, 120vh);
-  background-color: #f7f4ef;
-  background: url('docs/assets/img/Foto1_cuadrada_HiRes.jpg') no-repeat center center fixed;
-  background-size: cover;
-  position: relative;
-  overflow: hidden;
-}
+    header {
+      height: clamp(40vh, 60vh, 120vh);
+      background-color: #f7f4ef;
+      background: url('docs/assets/img/Foto1_cuadrada_HiRes.jpg') no-repeat center center fixed;
+      background-size: cover;
+      position: relative;
+      overflow: hidden;
+    }
 
       /*
 @media (max-width: 1080px) {
@@ -78,64 +49,38 @@ header {
   }
 }*/
       
-@media (max-width: 768px) {
-  header {
-    background-size: cover;
-    background-attachment: scroll;
-    min-height: 60vh;
-  }
+    @media (max-width: 768px) {
+        header {
+        background-size: cover;
+        background-attachment: scroll;
+        min-height: 60vh;
+        }
 }
-
       
-      /*
-.header-overlay {
-  background-color: rgba(255, 255, 255, 0.6);
-  padding: 20px 40px;
-  border-radius: 12px;
-}
-*/
-      
-      /*
-.header-overlay {
-  height: 100vh;
-  background-color: rgba(243, 240, 232, 0.5); 80% opacidad #f3f0e8
-  padding: 40px 20px;
-  width: 100%;
-  text-align: center;
-}
-*/
-      
-.header-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(255, 255, 255, 0.4); /* Fondo translúcido */
+    .header-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(255, 255, 255, 0.4); /* Fondo translúcido */
   
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  padding: 20px;
-}
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 20px;
+    }
+      
 
-/*
+      
     header h1 {
       font-family: 'Dancing Script', cursive;
-      font-size: 6em;
+      font-size: clamp(3.2rem, 10vw, 6rem); /* Mínimo 2.5rem, ideal 10vw, máximo 6rem */
       color: #5f442e;
     }
-  */
-      
-header h1 {
-  font-family: 'Dancing Script', cursive;
-  font-size: clamp(3.2rem, 10vw, 6rem); /* Mínimo 2.5rem, ideal 10vw, máximo 6rem */
-  color: #5f442e;
-}
 
-      
 
     header p {
       font-size: 1.2em;
@@ -190,23 +135,6 @@ header h1 {
       margin: auto;
     }
 
-/* TODO: For Test
-    .map-link, .button {
-      display: inline-block;
-      margin-top: 15px;
-      padding: 10px 20px;
-      background: #b78f63;
-      color: white;
-      border-radius: 5px;
-      text-decoration: none;
-      transition: 0.3s;
-    }
-
-    .map-link:hover, .button:hover {
-      background: #a37c50;
-    }
-*/
-      
     .map-link, .button {
       display: inline-block;
       margin-top: 15px;
@@ -228,19 +156,6 @@ header h1 {
       color: white;
     }
 
-/* TODO: For Test
-    .section-ceremony { background-color: #fce8e6; }
-    .section-reception { background-color: #f3f0e8; }
-    .section-dresscode { background: url('Foto6.jpg') no-repeat center center;background-size: cover;background-color: #e6f5f1; }
-    .section-gifts { background-color: #f7edf9; }
-    .section-hotels { background-color: #f2f7fb; }
-    .section-hotels2 { background-color: #f2f7fb; }
-    .section-confirm { background-color: #fdeee3; }
-*/
-      
-      /*
-    .section-ceremony    { background-color: #f7f4ef; }
-      */
     .section-ceremony {
       background-color: #f7f4ef;
       display: flex;
@@ -264,8 +179,136 @@ header h1 {
       background-position: center;
     }
       
+  
+/*-- ------------------------------ Counter -------------------------------- -- */
       
-    .confirm-wrapper {
+    .countdown_container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      background: rgba(255,255,255,0.8);
+      padding: 40px;
+      border-radius: 2px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+      max-width: 500px;
+      margin-bottom: 40px;
+      width: 90%;
+      
+    }
+      
+    .countdown {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap; /* <-- Esto */
+      gap: 10px;
+    }
+
+    .card {
+      flex: 1;
+      margin: 0 5px;
+      background: #fff;
+      padding: 15px;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
+      
+    .number {
+      font-family: 'Courier New', monospace;
+      font-size: clamp(1.1rem, 3vw, 2.5rem); /* Escala entre 1.5rem y 3rem según el ancho */
+      color: #222;
+    }
+
+    .label {
+      font-size: clamp(0.8rem, 2vw, 1rem); /* Escala suavemente en pantallas pequeñas */
+      color: #666;
+      margin-top: 5px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+      
+/*-- ------------------------------ Carrousel -------------------------------- -- */
+      
+    .carousel-section {
+      position: relative;
+      width: 100%;
+      height: 80vh;
+      background-color: #f7f4ef;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+    }
+    .carousel-container {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .carousel-slide {
+      display: none;
+      max-width: 50%;
+      max-height: 100%;
+      object-fit: contain;
+      position: absolute;
+    }
+    .carousel-slide.active {
+      display: block;
+      z-index: 1;
+    }
+    .carousel-arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 3rem;
+      color: #5f442e;
+      background: rgba(255,255,255,0.3);
+      border: none;
+      padding: 10px;
+      cursor: pointer;
+      z-index: 2;
+    }
+    .arrow-left { left: 10px; }
+    .arrow-right { right: 10px; }
+    .carousel-dots {
+      position: absolute;
+      bottom: 15px;
+      display: flex;
+      gap: 8px;
+      justify-content: center;
+      width: 100%;
+    }
+    .dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: #ccc;
+      cursor: pointer;
+    }
+    .dot.active {
+      background: #5f442e;
+    }
+    @media (max-width: 768px) {
+      .carousel-arrow {
+        font-size: 2.5rem;
+      }
+      .dot {
+        width: 10px;
+        height: 10px;
+      }
+      .carousel-slide {
+        max-width: 90%;
+      }
+    }
+      
+      
+/*-- ------------------------------ Confirmation -------------------------------- -- */
+      
+      .confirm-wrapper {
       display: flex;
       flex-wrap: wrap;
       align-items: stretch;
@@ -298,101 +341,11 @@ header h1 {
       font-family: 'Lora', serif;
     }
       
-/*
-    .countdown_container {
-        justify-content: center;
-      text-align: center;
-      background: rgba(255,255,255,0.8);
-      padding: 40px;
-      border-radius: 12px;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-      max-width: 400px;
-      width: 90%;
-    }
-*/
-    .countdown_container {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      background: rgba(255,255,255,0.8);
-      padding: 40px;
-      border-radius: 2px;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-      max-width: 500px;
-      margin-bottom: 40px;
-      width: 90%;
-      
-    }
-
-/*
-    .countdown {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      text-align: center;
-    }
-      */
-      
-    .countdown {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-wrap: wrap; /* <-- Esto */
-      gap: 10px;
-    }
-
-    .card {
-      flex: 1;
-      margin: 0 5px;
-      background: #fff;
-      padding: 15px;
-      border-radius: 8px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-    }
-      
-      /*
-    .number {
-      font-family: 'Courier New', monospace;
-      font-size: 2.2rem;
-      color: #222;
-    }
-    .label {
-      font-size: 0.8rem;
-      color: #666;
-      margin-top: 5px;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-    }*/
-      
-    .number {
-      font-family: 'Courier New', monospace;
-      font-size: clamp(1.1rem, 3vw, 2.5rem); /* Escala entre 1.5rem y 3rem según el ancho */
-      color: #222;
-    }
-
-    .label {
-      font-size: clamp(0.8rem, 2vw, 1rem); /* Escala suavemente en pantallas pequeñas */
-      color: #666;
-      margin-top: 5px;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-    }
-
-/*
-    @media(max-width: 500px) {
-      .countdown {
-        flex-direction: column;
-      }
-      .card {
-        margin: 5px 0;
-      }
-    }
-      */
   </style>
 </head>
 <body>
 
+<!-- ------------------------------ Photo and title -------------------------------- -->
 
 <header>
   <div class="header-overlay">
@@ -401,6 +354,8 @@ header h1 {
   </div>
 </header>
 
+    
+<!-- ------------------------------ Counter -------------------------------- -->
 
 <section class="section-ceremony">
     <h3 style="margin-bottom: 40px;font-size: 3em;font-family: 'Dancing Script', cursive;">28 . 03 . 2026</h3>
@@ -413,6 +368,8 @@ header h1 {
     
     <p style="margin-top: 10px;color: rgba(255, 255, 255, 0);">-</p>
 
+    
+<!-- ------------------------------ Padres -------------------------------- -->
 
   <div class="info-box">
     <h5 style="margin-top: 40px;">NUESTROS PADRES</h5>
@@ -453,9 +410,14 @@ header h1 {
     update();
     const timer = setInterval(update, 1000);
 </script>
+    
+<!-- ------------------------------ Photo  -------------------------------- -->
 
 <section class="fullscreen" style="background-image:url('docs/assets/img/Foto2.jpg');"></section>
 
+    
+<!-- ------------------------------ Ceremony and reception -------------------------------- -->
+    
 <section class="section-reception">
   <h2>Ceremonia y Recepción</h2>
   <div class="info-box">
@@ -468,6 +430,8 @@ header h1 {
   </div>
 </section>
     
+<!-- ------------------------------ Dress Code -------------------------------- -->
+    
 <section class="section-dresscode">
   <div class="info-box">
     <h2>Código de Vestimenta</h2>
@@ -475,6 +439,8 @@ header h1 {
     <img src="docs/assets/img/dress_code.png" alt="Dress Code" width="150">
   </div>
 </section>
+    
+<!-- ------------------------------ Niños -------------------------------- -->
 
 <section class="section-ninos">
   <div class="info-box">
@@ -484,9 +450,13 @@ header h1 {
   </div>
 </section>
     
+<!-- ------------------------------ Photo -------------------------------- -->
+    
 <section class="fullscreen" style="background-image:url('docs/assets/img/Foto3.jpg');height: 250vh;"></section>
 
 
+<!-- ------------------------------ Gifts -------------------------------- -->
+    
 <section class="section-gifts">
   <h2>Regalos</h2>
   <div class="info-box">
@@ -500,7 +470,81 @@ header h1 {
   </div>
 </section>
 
+<!-- ------------------------------ Photo -------------------------------- -->
+    
 <section class="fullscreen" style="background-image:url('docs/assets/img/Foto4.jpg');height: 250vh;"></section>
+
+
+<!-- ------------------------------ Carrousel -------------------------------- -->
+    
+<section class="carousel-section">
+  <div class="carousel-container">
+    <img src="docs/assets/img/Carrousel/Foto30.jpg" class="carousel-slide active" alt="Foto 30">
+    <img src="docs/assets/img/Carrousel/Foto31.jpg" class="carousel-slide" alt="Foto 31">
+    <img src="docs/assets/img/Carrousel/Foto32.jpg" class="carousel-slide" alt="Foto 32">
+    <img src="docs/assets/img/Carrousel/Foto33.jpg" class="carousel-slide" alt="Foto 33">
+    <img src="docs/assets/img/Carrousel/Foto34.jpg" class="carousel-slide" alt="Foto 34">
+    <img src="docs/assets/img/Carrousel/Foto35.jpg" class="carousel-slide" alt="Foto 35">
+    <img src="docs/assets/img/Carrousel/Foto36.jpg" class="carousel-slide" alt="Foto 36">
+    <img src="docs/assets/img/Carrousel/Foto37.jpg" class="carousel-slide" alt="Foto 37">
+    <img src="docs/assets/img/Carrousel/Foto38.jpg" class="carousel-slide" alt="Foto 38">
+    <img src="docs/assets/img/Carrousel/Foto39.jpg" class="carousel-slide" alt="Foto 39">
+    <img src="docs/assets/img/Carrousel/Foto40.jpg" class="carousel-slide" alt="Foto 40">
+    <button class="carousel-arrow arrow-left" id="prevBtn">❮</button>
+    <button class="carousel-arrow arrow-right" id="nextBtn">❯</button>
+      
+      
+  </div>
+    
+    <p style="margin-top: 1px;color: rgba(255, 255, 255, 0);">-</p>
+    <div class="carousel-dots" id="carouselDots"></div>
+    
+</section>
+
+<script>
+  const slides = document.querySelectorAll('.carousel-slide');
+  const prevBtn = document.getElementById('prevBtn');
+  const nextBtn = document.getElementById('nextBtn');
+  const dotsContainer = document.getElementById('carouselDots');
+  let currentSlide = 0;
+
+  function updateCarousel() {
+    slides.forEach((slide, index) => {
+      slide.classList.toggle('active', index === currentSlide);
+    });
+    document.querySelectorAll('.dot').forEach((dot, index) => {
+      dot.classList.toggle('active', index === currentSlide);
+    });
+    prevBtn.style.display = currentSlide === 0 ? 'none' : 'block';
+    nextBtn.style.display = currentSlide === slides.length - 1 ? 'none' : 'block';
+  }
+
+  function goToSlide(index) {
+    currentSlide = index;
+    updateCarousel();
+  }
+
+  prevBtn.addEventListener('click', () => {
+    if (currentSlide > 0) goToSlide(currentSlide - 1);
+  });
+
+  nextBtn.addEventListener('click', () => {
+    if (currentSlide < slides.length - 1) goToSlide(currentSlide + 1);
+  });
+
+  slides.forEach((_, index) => {
+    const dot = document.createElement('span');
+    dot.classList.add('dot');
+    dot.addEventListener('click', () => goToSlide(index));
+    dotsContainer.appendChild(dot);
+  });
+
+  updateCarousel();
+</script>
+    
+    
+<!-- ------------------------------ Hotels -------------------------------- -->
+    
 
 <section class="section-hotels">
   <h2>Hospedaje</h2>
@@ -535,10 +579,13 @@ header h1 {
   </div>
 </section>
     
+    
+<!-- ------------------------------ Confirmation -------------------------------- -->
+    
   
 <section class="section-confirm">
   <div class="confirm-wrapper">
-    <img src="docs/assets/img/Foto6.jpg" alt="Confirmar" class="confirm-img" />
+    <img src="docs/assets/img/Foto20.jpg" alt="Confirmar" class="confirm-img" />
     <div class="info-box">
       <h2>Confirmar Asistencia</h2>
       <p style="margin-bottom: 30px;margin-top: 20px;">Por favor confirma tu asistencia antes del 1 de Noviembre</p>
