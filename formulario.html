@@ -19,6 +19,10 @@
       color: #333;
     }
       
+          header p {
+      font-size: 1.2em;
+    }
+      
       /*
       .section-confirm{ 
           height: 100vh;
@@ -30,10 +34,17 @@
   display: flex;
   justify-content: center; /* centra horizontalmente */
   align-items: center;     /* centra verticalmente */
-  height: 150vh;
+  height: 100vh;
   background: url('docs/assets/img/Foto20.jpg') no-repeat center center;
   background-size: cover;
   background-color: #f7f4ef;
+}
+      
+/* Para pantallas más pequeñas (celulares, menos de 768px) */
+@media (max-height: 550px) {
+  .section-confirm {
+    height: 150vh; /* más bajo en móviles */
+  }
 }
       
       
@@ -93,14 +104,15 @@ h2 {
   <div class="confirm-wrapper">
     <div class="info-box">
       <h2>Confirmar Asistencia</h2>
-      <p style="margin-bottom: 20px;">Por favor confirma tu asistencia antes del 1 de Noviembre</p>
+      <p style="margin-top: 10px;margin-bottom: 20px;font-size: clamp(1rem, 2vw, 1.5rem)">Por favor confirma tu asistencia antes del 1 de Noviembre</p>
       <form id="confirmacion-form">
-        <input type="text" name="nombre" placeholder="Tu nombre completo" required
-               style="margin-bottom: 15px; padding: 12px; width: 100%; font-family: 'Lora', serif; border: 1px solid #ccc;">
         
         <input type="email" name="correo" placeholder="Tu correo electrónico" required
                style="margin-bottom: 15px; padding: 12px; width: 100%; font-family: 'Lora', serif; border: 1px solid #ccc;">
         
+        <input type="text" name="nombre" placeholder="Cantidad de asistentes" required
+               style="margin-bottom: 15px; padding: 12px; width: 100%; font-family: 'Lora', serif; border: 1px solid #ccc;">
+          
         <select name="asistencia" required
                 style="margin-bottom: 15px; padding: 12px; width: 100%; font-family: 'Lora', serif; border: 1px solid #ccc;">
           <option value="">¿Asistirás?</option>
@@ -108,7 +120,7 @@ h2 {
           <option value="No podré asistir">No podré asistir</option>
         </select>
         
-        <textarea name="mensaje" placeholder="¿Deseas dejar un mensaje?" rows="4"
+        <textarea name="mensaje" placeholder="Nombre completo de los asistentes" rows="4"
                   style="margin-bottom: 15px; padding: 12px; width: 100%; font-family: 'Lora', serif; border: 1px solid #ccc;"></textarea>
         
         <button type="submit" class="button" style="margin-top: 10px;">Enviar Confirmación</button>
