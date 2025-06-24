@@ -32,7 +32,7 @@ header {
     header {
       height: 80vh;
       background-color: #f7f4ef;
-      background: url('docs/assets/img/Foto1_cuadrada_HiRes.jpg') no-repeat center center fixed;
+      background: url('docs/assets/img/Foto1_cuadrada_HiRes.jpg') no-repeat left center fixed;
       background-size: cover;
       position: relative;
       overflow: hidden;
@@ -57,11 +57,19 @@ header {
         }
     }
       
-    @media (min-width: 1400px) {
+    @media (min-width: 1200px) {
         header {
         background-size: cover;
         background-attachment: scroll;
         min-height: 100vh;
+        }
+    }
+      
+    @media (max-height: 600px) {
+        header {
+        background-size: cover;
+        background-attachment: scroll;
+        min-height: 30vh;
         }
     }
       
