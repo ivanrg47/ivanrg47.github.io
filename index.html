@@ -30,7 +30,7 @@ header {
 */
       
     header {
-      height: clamp(40vh, 60vh, 120vh);
+      height: 80vh;
       background-color: #f7f4ef;
       background: url('docs/assets/img/Foto1_cuadrada_HiRes.jpg') no-repeat center center fixed;
       background-size: cover;
@@ -55,7 +55,15 @@ header {
         background-attachment: scroll;
         min-height: 60vh;
         }
-}
+    }
+      
+    @media (min-width: 1400px) {
+        header {
+        background-size: cover;
+        background-attachment: scroll;
+        min-height: 100vh;
+        }
+    }
       
     .header-overlay {
       position: absolute;
@@ -112,7 +120,7 @@ header {
       
     h5 {
       font-family: 'Dancing Script', cursive;
-      font-size: 1.5em;
+      font-size: clamp(2rem, 6vw, 4rem);
         color: #5f442e;
     }
       
@@ -401,11 +409,11 @@ header {
   <div class="info-box">
     <h5 style="margin-top: 40px;">Nuestros Padres</h5>
     
-    <p style="margin-top: 30px;">Roxana Helena Iglesias Ramírez</p>
+    <p style="margin-top: 30px;font-size: clamp(1rem, 2vw, 1.5rem)">Roxana Helena Iglesias Ramírez</p>
     <p>Rafael Jesús Lugo Ibarra</p>
     
-    <p style="margin-top: 30px;">Luz Del Carmen González Gutiérrez</p>
-    <p style="margin-bottom: 40px;">Juan Ramón Rodríguez González †</p>
+    <p style="margin-top: 30px;font-size: clamp(1rem, 2vw, 1.5rem)">Luz Del Carmen González Gutiérrez</p>
+    <p style="margin-bottom: 40px;font-size: clamp(1rem, 2vw, 1.5rem)">Juan Ramón Rodríguez González †</p>
   </div>
 </section>
     
