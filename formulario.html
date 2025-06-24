@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Mely & Ivan - Confirmar asistencia</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- FUENTES ELEGANTES -->
+  <link href="https://fonts.googleapis.com/css2?family=Lora&family=Playfair+Display:wght@500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+
+
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Lora', serif;
+      scroll-behavior: smooth;
+      color: #333;
+    }
+      
+      /*
+      .section-confirm{ 
+          height: 100vh;
+          background: url('docs/assets/img/Foto20.jpg') no-repeat center center;background-size: cover;background-color: #e4ebe4; 
+          background-color: #f7f4ef;
+      }
+      */
+.section-confirm {
+  display: flex;
+  justify-content: center; /* centra horizontalmente */
+  align-items: center;     /* centra verticalmente */
+  height: 100vh;
+  background: url('docs/assets/img/Foto20.jpg') no-repeat center center;
+  background-size: cover;
+  background-color: #f7f4ef;
+}
+      
+      
+    .confirm-img {
+      width: 100%;
+      max-width: 800px;
+      object-fit: cover;
+      height: 100%;
+    }
+      
+h2 {
+      font-family: 'Dancing Script', cursive;
+      font-size: clamp(2.5rem, 5vw, 3.5rem);
+      margin-bottom: 20px;
+        color: #5f442e;
+    }
+      
+    .info-box {
+      font-size: 1.3em;
+      background: rgba(255, 255, 255, 0.9);
+      display: inline-block;
+      padding: 25px;
+      border: 0px solid #ddd;
+      border-radius: 0px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+      max-width: 800px;
+      margin: auto;
+    }
+
+    .map-link, .button {
+      display: inline-block;
+      margin-top: 15px;
+      padding: 12px 30px;
+      background: transparent;
+      border: 2px solid #b78f63;
+      color: #b78f63;
+      font-family: 'Lora', serif;
+      font-size: 1em;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      text-decoration: none;
+      border-radius: 0;
+      transition: all 0.3s ease;
+    }
+
+    .map-link:hover, .button:hover {
+      background: #b78f63;
+      color: white;
+    }
+      
+  </style>
+        
+</head>
+<body>
+    
+<section class="section-confirm">
+  <div class="confirm-wrapper">
+    <div class="info-box">
+      <h2>Confirmar Asistencia</h2>
+      <p style="margin-bottom: 20px;">Por favor confirma tu asistencia antes del 1 de Noviembre</p>
+      <form id="confirmacion-form">
+        <input type="text" name="nombre" placeholder="Tu nombre completo" required
+               style="margin-bottom: 15px; padding: 12px; width: 100%; font-family: 'Lora', serif; border: 1px solid #ccc;">
+        
+        <input type="email" name="correo" placeholder="Tu correo electrónico" required
+               style="margin-bottom: 15px; padding: 12px; width: 100%; font-family: 'Lora', serif; border: 1px solid #ccc;">
+        
+        <select name="asistencia" required
+                style="margin-bottom: 15px; padding: 12px; width: 100%; font-family: 'Lora', serif; border: 1px solid #ccc;">
+          <option value="">¿Asistirás?</option>
+          <option value="Sí, asistiré">Sí, asistiré</option>
+          <option value="No podré asistir">No podré asistir</option>
+        </select>
+        
+        <textarea name="mensaje" placeholder="¿Deseas dejar un mensaje?" rows="4"
+                  style="margin-bottom: 15px; padding: 12px; width: 100%; font-family: 'Lora', serif; border: 1px solid #ccc;"></textarea>
+        
+        <button type="submit" class="button" style="margin-top: 10px;">Enviar Confirmación</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+
+<!-- EmailJS -->
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+<script>
+  (function() {
+    emailjs.init("1ckfscstZ-HpWSzgB"); // Reemplaza con tu User ID (public key de EmailJS)
+  })();
+
+  document.getElementById('confirmacion-form').addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    emailjs.sendForm('service_xoorggc', 'template_c8dk3dd', this)
+      .then(function() {
+        alert('¡Gracias por confirmar tu asistencia! 💌');
+        document.getElementById('confirmacion-form').reset();
+      }, function(error) {
+        alert('Hubo un error al enviar el formulario. Intenta de nuevo.');
+        console.error('EmailJS Error:', error);
+      });
+  });
+</script>
+</body>
+</html>
