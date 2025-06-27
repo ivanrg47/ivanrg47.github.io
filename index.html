@@ -4,6 +4,15 @@
   <meta charset="UTF-8">
   <title>Mely & Ivan - Boda</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+        <script>
+  const allowedLangs = ['es', 'es-es', 'es-mx', 'es-ar'];
+  const userLang = navigator.language.toLowerCase();
+
+  if (!allowedLangs.includes(userLang)) {
+    window.location.href = 'index_en.html'; // Reemplaza con la URL deseada
+  }
+</script>
 
   <!-- FUENTES ELEGANTES -->
   <link href="https://fonts.googleapis.com/css2?family=Lora&family=Playfair+Display:wght@500&display=swap" rel="stylesheet">
