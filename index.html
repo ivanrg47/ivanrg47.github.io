@@ -209,11 +209,18 @@ header {
     height: 100vh; /* más bajo en móviles */
   }
 }
+      
+/* Para pantallas más pequeñas (celulares, menos de 768px) */
+@media (max-height: 400px) {
+  .fullscreen {
+    height: 200vh; /* más bajo en móviles */
+  }
+}
 
 /* Para pantallas grandes (más de 1400px, por ejemplo) */
 @media (min-width: 1400px) {
   .fullscreen {
-    height: 350vh; /* más alto en desktop */
+    height: 200vh; /* más alto en desktop */
   }
 }
       
