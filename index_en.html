@@ -32,45 +32,33 @@ header {
     header {
       height: 100vh;
       background-color: #f7f4ef;
-      background: url('docs/assets/img/Foto191.jpg') no-repeat center fixed;
+      background: url('docs/assets/img/Foto191_cuadrada.jpg') no-repeat center fixed;
       background-size: cover;
       position: relative;
       overflow: hidden;
     }
 
-      /*
-@media (max-width: 1080px) {
-  header {
-    background-color: #f7f4ef;
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-attachment: scroll; // Mejora rendimiento en móviles 
-  }
-}*/
       
     @media (max-width: 768px) {
         header {
         background-size: cover;
+        background-attachment: scroll;
         min-height: 70vh;
         }
     }
       
     @media (min-width: 1200px) {
         header {
-        height: 100vh;
-        background-color: #f7f4ef;
-        background: url('docs/assets/img/Foto191.jpg') no-repeat center calc(50% + 150px) fixed;
         background-size: cover;
-        position: relative;
-        overflow: hidden;
-            
+        background-attachment: scroll;
+        min-height: 100vh;
         }
     }
       
     @media (max-height: 600px) {
         header {
         background-size: cover;
+        background-attachment: scroll;
         min-height: 30vh;
         }
     }
