@@ -5,14 +5,15 @@
   <title>Mely & Ivan - Boda</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-        <script>
-  const allowedLangs = ['es', 'es-es', 'es-mx', 'es-ar'];
+    <script>
   const userLang = navigator.language.toLowerCase();
 
-  if (!allowedLangs.includes(userLang)) {
-    window.location.href = 'index_en.html'; // Reemplaza con la URL deseada
+  // Si NO empieza con "es" (español), redirige
+  if (!userLang.startsWith('es')) {
+    window.location.href = 'index_en.html'; // Cambia a la URL que desees
   }
 </script>
+
 
   <!-- FUENTES ELEGANTES -->
   <link href="https://fonts.googleapis.com/css2?family=Lora&family=Playfair+Display:wght@500&display=swap" rel="stylesheet">
@@ -40,24 +41,13 @@ header {
       
     header {
       height: 100vh;
-        background-color: #f7f4ef;
-        background: url('docs/assets/img/Foto191.jpg') no-repeat center calc(50% + 150px) fixed;
-        background-size: cover;
-        position: relative;
-        overflow: hidden;
-        min-height: 70vh;
+      background-color: #f7f4ef;
+      background: url('docs/assets/img/Foto191_cuadrada.jpg') no-repeat left center fixed;
+      background-size: cover;
+      position: relative;
+      overflow: hidden;
     }
 
-      /*
-@media (max-width: 1080px) {
-  header {
-    background-color: #f7f4ef;
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-attachment: scroll; // Mejora rendimiento en móviles 
-  }
-}*/
       
     @media (max-width: 768px) {
         header {
@@ -68,13 +58,8 @@ header {
       
     @media (min-width: 1200px) {
         header {
-        height: 100vh;
-        background-color: #f7f4ef;
-        background: url('docs/assets/img/Foto191.jpg') no-repeat center calc(50% + 150px) fixed;
         background-size: cover;
-        position: relative;
-        overflow: hidden;
-            
+        min-height: 100vh;
         }
     }
       
