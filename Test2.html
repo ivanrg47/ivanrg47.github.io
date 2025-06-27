@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Mely & Ivan - Boda</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- FUENTES ELEGANTES -->
+  <link href="https://fonts.googleapis.com/css2?family=Lora&family=Playfair+Display:wght@500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Lora', serif;
+      scroll-behavior: smooth;
+      color: #333;
+    }
+
+    header {
+      height: 100vh;
+      background-color: #f7f4ef;
+      background: url('docs/assets/img/Foto1_cuadrada_HiRes.jpg') no-repeat left center fixed;
+      background-size: cover;
+      position: relative;
+      overflow: hidden;
+    }
+
+    @media (max-width: 768px) {
+      header {
+        background-size: cover;
+        background-attachment: scroll;
+        min-height: 70vh;
+        }
+    }
+      
+    @media (min-width: 1200px) {
+        header {
+        background-size: cover;
+        background-attachment: scroll;
+        min-height: 100vh;
+        }
+    }
+      
+    @media (max-height: 600px) {
+        header {
+        background-size: cover;
+        background-attachment: scroll;
+        min-height: 30vh;
+        }
+    }
+      
+    .header-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(255, 255, 255, 0.4); /* Fondo translúcido */
+  
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 20px;
+    }
+      
+
+      
+    header h1 {
+      font-family: 'Dancing Script', cursive;
+      font-size: clamp(3.2rem, 10vw, 6rem); /* Mínimo 2.5rem, ideal 10vw, máximo 6rem */
+      color: #5f442e;
+    }
+
+
+    header p {
+      font-size: 1.2em;
+    }
+
+    section {
+      padding: 80px 20px;
+      text-align: center;
+    }
+
+    h2 {
+      font-family: 'Dancing Script', cursive;
+      font-size: clamp(2.5rem, 5vw, 3.5rem);
+      margin-bottom: 20px;
+        color: #5f442e;
+    }
+      
+    h3 {
+      /*font-family: 'Dancing Script', cursive;*/
+      font-size: 2em;
+        color: #5f442e;
+    }
+      
+    header h4 {
+      font-family: 'Dancing Script', cursive;
+      font-size: 6em;
+        color: #5f442e;
+    }
+      
+    h5 {
+      font-family: 'Dancing Script', cursive;
+      font-size: clamp(2rem, 6vw, 4rem);
+        color: #5f442e;
+    }
+      
+      
+    h6 {
+      /*font-family: 'Dancing Script', cursive;*/
+      font-size: clamp(1.5rem, 3vw, 2rem); /* Mínimo 2.5rem, ideal 10vw, máximo 6rem */
+        color: #5f442e;
+    }
+
+    .info-box {
+      font-size: 1.3em;
+      background: rgba(255, 255, 255, 0.9);
+      display: inline-block;
+      padding: 25px;
+      border: 0px solid #ddd;
+      border-radius: 0px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+      max-width: 800px;
+      margin: auto;
+    }
+
+    .map-link, .button {
+      display: inline-block;
+      margin-top: 15px;
+      padding: 12px 30px;
+      background: transparent;
+      border: 2px solid #b78f63;
+      color: #b78f63;
+      font-family: 'Lora', serif;
+      font-size: 1em;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      text-decoration: none;
+      border-radius: 0;
+      transition: all 0.3s ease;
+    }
+
+    .map-link:hover, .button:hover {
+      background: #b78f63;
+      color: white;
+    }
+
+    .section-ceremony {
+      background-color: #f7f4ef;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+
+      
+    .section-reception   { background-color: #f4e9e0; }
+    .section-dresscode   { background: url('docs/assets/img/Foto5.jpg') no-repeat center center;background-size: cover;background-color: #e4ebe4; }
+    .section-ninos     { background-color: #f4e9e0; }
+    .section-gifts       { background-color: #f7f4ef; }
+    .section-hotels      { background-color: #eae6da; }
+    .section-hotels2      { background-color: #eae6da; }
+    .section-confirm     { background-color: #f4e9e0; }
+
+    .fullscreen2 {
+      height: 100vh;
+      background-size: cover;
+      background-position: center;
+    }
+      
+.fullscreen {
+  background-position: center top;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100vh; /* valor base, por ejemplo */
+}
+
+/* Para pantallas más pequeñas (celulares, menos de 768px) */
+@media (max-width: 767px) {
+  .fullscreen {
+    height: 150vh; /* más bajo en móviles */
+  }
+}
+
+/* Para pantallas grandes (más de 1400px, por ejemplo) */
+@media (min-width: 1400px) {
+  .fullscreen {
+    height: 350vh; /* más alto en desktop */
+  }
+}
+      
+  
+/*-- ------------------------------ Counter -------------------------------- -- */
+      
+    .countdown_container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      background: rgba(255,255,255,0.8);
+      padding: 40px;
+      border-radius: 2px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+      max-width: 500px;
+      margin-bottom: 40px;
+      width: 90%;
+      
+    }
+      
+    .countdown {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap; /* <-- Esto */
+      gap: 10px;
+    }
+
+    .card {
+      flex: 1;
+      margin: 0 5px;
+      background: #fff;
+      padding: 15px;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
+      
+    .number {
+      font-family: 'Courier New', monospace;
+      font-size: clamp(1.1rem, 3vw, 2.5rem); /* Escala entre 1.5rem y 3rem según el ancho */
+      color: #222;
+    }
+
+    .label {
+      font-size: clamp(0.8rem, 2vw, 1rem); /* Escala suavemente en pantallas pequeñas */
+      color: #666;
+      margin-top: 5px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+      
+/*-- ------------------------------ Carrousel -------------------------------- -- */
+      
+    .carousel-section {
+      background-color: #f7f4ef;
+      height: 80vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .carousel-container {
+      width: 90%;
+      max-width: 800px;
+      height: 400px;
+      perspective: 1200px;
+      position: relative;
+    }
+
+    .carousel {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      transform-style: preserve-3d;
+    }
+
+    .carousel-item {
+      position: absolute;
+      width: 60%;
+      height: 80%;
+      top: 10%;
+      left: 20%;
+      transform-origin: center center;
+      transition: transform 1s, filter 1s, opacity 1s;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    }
+
+    .carousel-item img {
+      width: 100%; height: 100%; object-fit: cover;
+    }
+
+    .carousel-item.inactive {
+      filter: grayscale(100%) blur(1px);
+      opacity: 0.5;
+    }
+
+    .carousel-item.active {
+      filter: none;
+      opacity: 1;
+      transform: scale(1.1);
+      z-index: 10;
+    }
+
+    .nav-buttons {
+      position: absolute;
+      width: 100%;
+      top: 50%;
+      transform: translateY(-50%);
+      display: flex;
+      justify-content: space-between;
+      padding: 0 10px;
+      z-index: 20;
+    }
+
+    .nav-buttons button {
+      background: rgba(255, 255, 255, 0.7);
+      border: none;
+      padding: 10px 15px;
+      border-radius: 50%;
+      font-size: 20px;
+      cursor: pointer;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .nav-buttons button:hover {
+      background: white;
+    }
+
+    footer {
+      background: #f0f0f0;
+      text-align: center;
+      padding: 40px 20px;
+      font-size: 0.9em;
+      font-family: 'Lora', serif;
+    }
+  </style>
+</head>
+<body>
+
+<!-- ------------------------------ Photo and title -------------------------------- -->
+
+<header>
+  <div class="header-overlay">
+  <h1>Melissa & Iván</h1>
+  <h6>28 de Marzo del 2026</h6>
+  </div>
+</header>
+
+    
+<!-- ------------------------------ Counter -------------------------------- -->
+
+<section class="section-ceremony">
+    <h3 style="margin-bottom: 40px;font-size: 3em;font-family: 'Dancing Script', cursive;">28 . 03 . 2026</h3>
+    <div class="countdown">
+      <div class="card"><div id="days" class="number">--</div><div class="label">DÍAS</div></div>
+      <div class="card"><div id="hours" class="number">--</div><div class="label">HORAS</div></div>
+      <div class="card"><div id="minutes" class="number">--</div><div class="label">MIN</div></div>
+      <div class="card"><div id="seconds" class="number">--</div><div class="label">SEG</div></div>
+    </div>
+    
+    <p style="margin-top: 10px;color: rgba(255, 255, 255, 0);">-</p>
+
+    
+<!-- ------------------------------ Padres -------------------------------- -->
+
+  <div class="info-box">
+    <h5 style="margin-top: 40px;">Nuestros Padres</h5>
+    
+    <p style="margin-top: 30px;font-size: clamp(1rem, 2vw, 1.5rem)">Roxana Helena Iglesias Ramírez</p>
+    <p style="margin-bottom: 5px;font-size: clamp(1rem, 2vw, 1.5rem)">Rafael Jesús Lugo Ibarra</p>
+    
+    <p style="margin-top: 30px;font-size: clamp(1rem, 2vw, 1.5rem)">Luz Del Carmen González Gutiérrez</p>
+    <p style="margin-bottom: 40px;font-size: clamp(1rem, 2vw, 1.5rem)">Juan Ramón Rodríguez González †</p>
+  </div>
+</section>
+    
+<script>
+    const target = new Date("2026-03-28T17:30:00");
+    const ids = ["days", "hours", "minutes", "seconds"];
+
+    function update() {
+      const now = new Date();
+      let diff = target - now;
+      if (diff <= 0) {
+        ids.forEach(id => document.getElementById(id).innerText = "00");
+        clearInterval(timer);
+        return;
+      }
+      const d = Math.floor(diff / 86400000);
+      diff %= 86400000;
+      const h = Math.floor(diff / 3600000);
+      diff %= 3600000;
+      const m = Math.floor(diff / 60000);
+      const s = Math.floor(diff / 1000) % 60;
+
+      document.getElementById("days").innerText = String(d).padStart(2, '0');
+      document.getElementById("hours").innerText = String(h).padStart(2, '0');
+      document.getElementById("minutes").innerText = String(m).padStart(2, '0');
+      document.getElementById("seconds").innerText = String(s).padStart(2, '0');
+    }
+
+    update();
+    const timer = setInterval(update, 1000);
+</script>
+    
+<!-- ------------------------------ Photo  -------------------------------- -->
+
+<section class="fullscreen2" style="background-image:url('docs/assets/img/Foto2.jpg');"></section>
+
+    
+<!-- ------------------------------ Ceremony and reception -------------------------------- -->
+    
+<section class="section-reception">
+  <h2>Ceremonia y Recepción</h2>
+  <div class="info-box">
+    <p style="margin-bottom: 20px;font-size: 1.6em;">Hacienda La Santa Cruz</p>
+    <p style="margin-bottom: 20px;font-size: 1.2em;">5:30 pm</p>
+    
+    <img src="docs/assets/img/hacienda.jpg" alt="Hacienda" style="width: calc(60%); box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5); border-radius: 0px;">
+
+    <p style="margin-top: 10px;">Carretera a Colotlán Km 5.5</p>
+    <p style="margin-bottom: 10px">Zapopan</p>
+    <a href="https://maps.app.goo.gl/3vrv135P1NR2qjux9" class="map-link" target="_blank" rel="noopener noreferrer">Ver</a>
+  </div>
+</section>
+    
+<!-- ------------------------------ Dress Code -------------------------------- -->
+    
+<section class="section-dresscode">
+  <div class="info-box">
+    <h2>Código de Vestimenta</h2>
+    <p style="margin-bottom: 10px;color: #5f442e;font-size: 2em;">Formal</p>
+    <img src="docs/assets/img/dress_code.png" alt="Dress Code" style="width: calc(40%); box-shadow: 0 8px 24px rgba(0, 0, 0, 0); border-radius: 0px;">
+  </div>
+</section>
+    
+<!-- ------------------------------ Niños -------------------------------- -->
+
+<section class="section-ninos">
+  <div class="info-box">
+    <h3>No Niños</h3>
+    <p style="margin-top: 40px;margin-bottom: 20px;">Aunque adoramos a los más pequeños de la familia, por motivos de seguridad la hacienda solo permite que este evento sea exclusivo para mayores de edad.</p>
+<p style="margin-top: 40px;margin-bottom: 20px;">Agradecemos de corazón tu comprensión y apoyo para que todos podamos disfrutar de una celebración tranquila y especial.</p>
+  </div>
+</section>
+    
+<!-- ------------------------------ Photo -------------------------------- -->
+    
+<section class="fullscreen" style="background-image:url('docs/assets/img/Foto3.jpg');"></section>
+
+
+<!-- ------------------------------ Gifts -------------------------------- -->
+    
+<section class="section-gifts">
+  <h2>Regalos</h2>
+  <div class="info-box">
+    <p style="margin-bottom: 10px;">El mejor regalo es tu presencia.</p>
+    <p style="margin-bottom: 40px;">Pero si deseas contribuir a nuestro nuevo comienzo en el extranjero, puedes hacerlo en nuestra cuenta </p>
+    <p>BBVA</p>
+    <p>Nombre: Melissa Lugo Iglesias</p>
+    <p>No. Cuenta: 159 903 8984</p>
+    <p>CLABE: 012 180 01599038984 4</p>
+    <p>Referencia: Nombre del invitado</p>
+  </div>
+</section>
+
+<!-- ------------------------------ Photo -------------------------------- -->
+    
+<section class="fullscreen" style="background-image:url('docs/assets/img/Foto4.jpg');"></section>
+
+
+<!-- ------------------------------ Carrousel -------------------------------- -->
+    
+<section class="carousel-section">
+  <div class="carousel-container">
+    <div class="carousel" id="carousel">
+      <div class="carousel-item"><img src="docs/assets/img/Carrousel/Foto30.jpg" alt="Foto 1"></div>
+      <div class="carousel-item"><img src="docs/assets/img/Carrousel/Foto31.jpg" alt="Foto 2"></div>
+      <div class="carousel-item"><img src="docs/assets/img/Carrousel/Foto32.jpg" alt="Foto 3"></div>
+      <div class="carousel-item"><img src="docs/assets/img/Carrousel/Foto33.jpg" alt="Foto 4"></div>
+      <div class="carousel-item"><img src="docs/assets/img/Carrousel/Foto34.jpg" alt="Foto 5"></div>
+    </div>
+    <div class="nav-buttons">
+      <button onclick="rotateCarousel(-1)">⟨</button>
+      <button onclick="rotateCarousel(1)">⟩</button>
+    </div>
+  </div>
+    
+    <p style="margin-top: 1px;color: rgba(255, 255, 255, 0);">-</p>
+    
+    
+</section>
+
+<script>
+  const items = Array.from(document.querySelectorAll(".carousel-item"));
+  const totalItems = items.length;
+  let selectedIndex = 0;
+
+  function updateCarousel() {
+    const angleStep = 360 / totalItems;
+    items.forEach((item, i) => {
+      const indexFromSelected = (i - selectedIndex + totalItems) % totalItems;
+      const angle = indexFromSelected * angleStep;
+      const radians = angle * Math.PI / 180;
+      const x = Math.sin(radians) * 400;
+      const z = Math.cos(radians) * 400;
+
+      item.style.transform = `translateX(${x}px) translateZ(${z}px) rotateY(${angle}deg)`;
+
+      if (indexFromSelected === 0) {
+        item.classList.add("active");
+        item.classList.remove("inactive");
+      } else {
+        item.classList.remove("active");
+        item.classList.add("inactive");
+      }
+    });
+  }
+    
+  function updateCarouselGesture(direction) {
+    selectedIndex = (selectedIndex + direction + totalItems) % totalItems;
+    updateCarousel();
+  }
+
+  function rotateCarousel(direction) {
+    selectedIndex = (selectedIndex + direction + totalItems) % totalItems;
+    updateCarousel();
+  }
+    
+    
+  const carousel = document.getElementById('carousel');
+  let startX = 0;
+  let endX = 0;
+
+  carousel.addEventListener('touchstart', e => {
+    startX = e.touches[0].clientX;
+  });
+
+  carousel.addEventListener('touchend', e => {
+    endX = e.changedTouches[0].clientX;
+    const diff = startX - endX;
+    if (Math.abs(diff) > 50) {
+      if (diff > 0) {
+        updateCarouselGesture(1);
+      } else {
+        updateCarouselGesture(-1);
+      }
+    }
+  });
+
+  updateCarousel();
+</script>
+    
+    
+<!-- ------------------------------ Hotels -------------------------------- -->
+    
+
+<section class="section-hotels">
+  <h2>Hospedaje</h2>
+
+  <p style="margin-bottom: 10px;color: #5f442e;font-size: clamp(1.3rem, 1.7vw, 2.5rem);">Si nos visitan de otra ciudad, les recomendamos hospedarse en algunas de las opciones cercanas a la Hacienda.</p>
+    
+  <div class="info-box">
+    <p style="margin-bottom: 20px;font-size: clamp(1.5rem, 3.5vw, 2.5rem);">Hyatt Regency Andares Guadalajara</p>
+    <img src="docs/assets/img/hyatt.jpg" alt="Hyatt" style="width: calc(80%); box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5); border-radius: 0px;">
+    <p style="margin-top: 20px;font-size: clamp(1rem, 1.5vw, 2rem);">Blvd. Puerta de Hierro 5065</p>
+    <p style="margin-bottom: 20px;font-size: clamp(1rem, 1.5vw, 2rem);">Zapopan</p>
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3731.9438380882298!2d-103.41485402419723!3d20.71250508085894!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8428af03c0bde3c1%3A0xd633bfad277a45c5!2sHyatt%20Regency%20Andares%20Guadalajara!5e0!3m2!1ses!2smx!4v1750620851712!5m2!1ses!2smx" height="300" style="border:0;width: calc(80%);" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    <p style="margin-top: 10px;color: rgba(255, 255, 255, 0);">-</p>
+    <a href="https://maps.app.goo.gl/E6HeHPBVaaoLEx5L7" class="map-link" target="_blank" rel="noopener noreferrer">Ver</a>
+  </div>
+</section>
+<section class="section-hotels2">
+  <div class="info-box">
+    <p style="margin-bottom: 20px;font-size: clamp(1.5rem, 3.5vw, 2.5rem);">Holiday Inn Express Guadalajara Vallarta</p>
+    <img src="docs/assets/img/holiday.jpg" alt="Hyatt" style="width: calc(80%); box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5); border-radius: 0px;">
+    <p style="margin-top: 20px;font-size: clamp(1rem, 1.5vw, 2rem);">Carretera Guadalajara-Nogales 440</p>
+    <p style="margin-bottom: 20px;font-size: clamp(1rem, 1.5vw, 2rem);">Zapopan</p>
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d17253.844363473858!2d-103.45588316007552!3d20.70657805084084!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8428a9c4571603dd%3A0x6276ca047d4c5791!2sHoliday%20Inn%20Express%20Guadalajara%20Vallarta%20Poniente%20by%20IHG!5e0!3m2!1ses!2smx!4v1750621370906!5m2!1ses!2smx" width="200" height="300" style="border:0;width: calc(80%);" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    <p style="margin-top: 10px;color: rgba(255, 255, 255, 0);">-</p>
+    <a href="https://maps.app.goo.gl/L2mqBLEgK8KR3RGK9" class="map-link" target="_blank" rel="noopener noreferrer">Ver</a>
+  </div>
+</section>
+    
+<section class="section-confirm">
+  <div class="confirm-wrapper">
+    <img src="docs/assets/img/Foto12.jpg" alt="Confirmar" class="confirm-img" />
+  </div>
+</section>
+    
+    
+<!-- ------------------------------ Confirmation -------------------------------- -->
+    
+  
+<section class="section-confirm">
+  <div class="confirm-wrapper">
+    <img src="docs/assets/img/Foto20.jpg" alt="Confirmar" class="confirm-img" />
+    <div class="info-box">
+      <h2>Confirmar Asistencia</h2>
+      <p style="margin-bottom: 30px;margin-top: 20px;">Por favor confirma tu asistencia antes del 1 de Noviembre</p>
+      <a href="formulario.html" class="button">Confirmar</a>
+    </div>
+  </div>
+</section>
+
+
+<!-- TODO: For Test  
+<section class="section-confirm">
+  <h2>Confirmar Asistencia</h2>
+  <div class="info-box">
+    <p>Por favor confirma tu asistencia antes del 1 de octubre</p>
+    <a href="#" class="button">Confirmar</a>
+  </div>
+</section>
+-->
+    
+<footer>
+  Gracias por compartir este día tan especial con nosotros ♥<br>
+  Mely & Ivan © 2026
+</footer>
+
+</body>
+</html>
